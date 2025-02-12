@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dearisa - Professional Fashion Designer specializing in sustainable and contemporary fashion">
+    <title>Dearisa | Fashion Designer & Creative Director</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .hero {
+            height: 100vh;
+            background-color: #f8f5f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #555;
+        }
+
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .skill-card {
+            padding: 2rem;
+            background: #f8f5f2;
+            border-radius: 5px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+
+        .services {
+            background: #f8f5f2;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 5px;
+        }
+
+        .testimonials {
+            background: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            padding: 2rem;
+            background: #f8f5f2;
+            border-radius: 5px;
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        input, textarea {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-grid,
+            .skills-grid,
+            .portfolio-grid,
+            .services-grid,
+            .testimonial-grid,
+            .brands-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>DEARISA</h1>
+            <p>Fashion Designer & Creative Director</p>
+            <p>Creating timeless fashion pieces that blend contemporary elegance with sustainable design</p>
+            <a href="#contact" class="cta-button">Work With Me</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="/api/placeholder/600/600" alt="Dearisa portrait" />
+                </div>
+                <div class="about-content">
+                    <h2>About Me</h2>
+                    <p>With over a decade of experience in the fashion industry, I've dedicated my career to creating designs that empower and inspire. My work combines innovative silhouettes with sustainable materials, bringing a fresh perspective to contemporary fashion.</p>
+                    <p>After graduating from the prestigious London College of Fashion, I've collaborated with leading brands and established my own label, focusing on creating pieces that stand the test of time both in style and quality.</p>
+                    <p>My designs have been featured in Vogue, Elle, and Harper's Bazaar, and worn by influential figures in the fashion industry. I believe in creating fashion that not only looks beautiful but also contributes to a more sustainable future.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills">
+        <div class="container">
+            <h2>Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Design</h3>
+                    <p>Pattern Making</p>
+                    <p>Draping</p>
+                    <p>Illustration</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Technical</h3>
+                    <p>CAD Design</p>
+                    <p>3D Modeling</p>
+                    <p>Technical Drawing</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Business</h3>
+                    <p>Brand Development</p>
+                    <p>Collection Planning</p>
+                    <p>Production Management</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/400/400" alt="Spring Collection 2025" />
+                    <div class="portfolio-overlay">
+                        <h3>Spring Collection 2025</h3>
+                        <p>Sustainable luxury pieces inspired by nature</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/400/400" alt="Sustainable Series" />
+                    <div class="portfolio-overlay">
+                        <h3>Sustainable Series</h3>
+                        <p>Eco-friendly materials meet contemporary design</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/400/400" alt="Evening Wear Collection" />
+                    <div class="portfolio-overlay">
+                        <h3>Evening Wear Collection</h3>
+                        <p>Elegant designs for special occasions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Custom Design</h3>
+                    <p>Bespoke pieces tailored to your style and preferences</p>
+                    <ul>
+                        <li>Personal consultation</li>
+                        <li>Custom measurements</li>
+                        <li>Multiple fittings</li>
+                        <li>Fabric selection</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Brand Collaboration</h3>
+                    <p>Creative direction and design for fashion brands</p>
+                    <ul>
+                        <li>Collection development</li>
+                        <li>Technical design</li>
+                        <li>Sustainable solutions</li>
+                        <li>Production oversight</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>Client Testimonials</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"Dearisa's attention to detail and understanding of sustainable fashion is unparalleled. Her designs are both beautiful and conscientious."</p>
+                    <p><strong>- Emma Thompson, Vogue Editor</strong></p>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Working with Dearisa was an incredible experience. She truly understands how to bring a vision to life while maintaining sustainability."</p>
+                    <p><strong>- Sarah Chen, Fashion Influencer</strong></p>
+                </div>
+            </div>
+            <div class="brands-grid">
+                <img src="/api/placeholder/200/100" alt="Brand 1" />
+                <img src="/api/placeholder/200/100" alt="Brand 2" />
+                <img src="/api/placeholder/200/100" alt="Brand 3" />
+                <img src="/api/placeholder/200/100" alt="Brand 4" />
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-grid">
+                <div>
+                    <h3>Contact Information</h3>
+                    <p>Email: contact@dearisa.com</p>
+                    <p>Studio: London, UK</p>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Pinterest</a>
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea rows="5" placeholder="Message" required></textarea>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Dearisa. All rights reserved.</p>
+    </footer>
+</body>
+</html>
