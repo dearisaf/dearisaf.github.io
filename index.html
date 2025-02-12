@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dearisa - Professional Fashion Designer specializing in sustainable and contemporary fashion">
-    <title>Dearisa | Fashion Designer & Creative Director</title>
+    <meta name="description" content="Dearisa Firmanartha - Fashion Designer & Creative Director specializing in sustainable fashion">
+    <title>Dearisa Firmanartha | Fashion Designer & Creative Director</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
             line-height: 1.6;
             color: #333;
+            font-family: 'Poppins', sans-serif;
         }
 
         nav {
@@ -24,6 +26,8 @@
             background: rgba(255, 255, 255, 0.95);
             padding: 1rem;
             z-index: 1000;
+            top: 0;
+            left: 0;
         }
 
         nav ul {
@@ -39,6 +43,21 @@
             font-weight: 500;
         }
 
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            width: 30px;
+            height: 25px;
+        }
+
+        .hamburger div {
+            background-color: #333;
+            height: 4px;
+            width: 100%;
+        }
+
         .hero {
             height: 100vh;
             background-color: #f8f5f2;
@@ -51,7 +70,7 @@
 
         .hero-content h1 {
             font-size: 4rem;
-            font-weight: 300;
+            font-weight: 700;
             margin-bottom: 1rem;
             letter-spacing: 3px;
         }
@@ -219,8 +238,18 @@
 
         @media (max-width: 768px) {
             nav ul {
+                display: none;
                 flex-direction: column;
                 text-align: center;
+                gap: 2rem;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
             }
 
             .about-grid,
@@ -233,15 +262,20 @@
                 grid-template-columns: 1fr;
             }
 
-            .hero-content h1 {
-                font-size: 3rem;
+            .hamburger {
+                display: flex;
             }
         }
     </style>
 </head>
 <body>
     <nav>
-        <ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul id="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#services">Services</a></li>
@@ -251,7 +285,7 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1>DEARISA</h1>
+            <h1>Dearisa Firmanartha</h1>
             <p>Fashion Designer & Creative Director</p>
             <p>Creating timeless fashion pieces that blend contemporary elegance with sustainable design</p>
             <a href="#contact" class="cta-button">Work With Me</a>
@@ -262,7 +296,7 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-image">
-                    <img src="/api/placeholder/600/600" alt="Dearisa portrait" />
+                    <img src="/api/placeholder/600/600" alt="Dearisa Firmanartha portrait" />
                 </div>
                 <div class="about-content">
                     <h2>About Me</h2>
@@ -370,12 +404,6 @@
                     <p><strong>- Sarah Chen, Fashion Influencer</strong></p>
                 </div>
             </div>
-            <div class="brands-grid">
-                <img src="/api/placeholder/200/100" alt="Brand 1" />
-                <img src="/api/placeholder/200/100" alt="Brand 2" />
-                <img src="/api/placeholder/200/100" alt="Brand 3" />
-                <img src="/api/placeholder/200/100" alt="Brand 4" />
-            </div>
         </div>
     </section>
 
@@ -386,7 +414,7 @@
                 <div>
                     <h3>Contact Information</h3>
                     <p>Email: contact@dearisa.com</p>
-                    <p>Studio: London, UK</p>
+                    <p>Studio: Surabaya, Indonesia</p>
                     <div class="social-links">
                         <a href="#">Instagram</a>
                         <a href="#">Pinterest</a>
@@ -404,7 +432,14 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Dearisa. All rights reserved.</p>
+        <p>&copy; 2025 Dearisa Firmanartha. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
