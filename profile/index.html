@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dearisa Firmanartha - Fashion Designer & Creative Director specializing in sustainable fashion">
+    <title>Dearisa Firmanartha | Fashion Designer & Creative Director</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            width: 30px;
+            height: 25px;
+        }
+
+        .hamburger div {
+            background-color: #333;
+            height: 4px;
+            width: 100%;
+        }
+
+        .hero {
+            height: 100vh;
+            background-color: #f8f5f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #555;
+        }
+
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .skill-card {
+            padding: 2rem;
+            background: #f8f5f2;
+            border-radius: 5px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+
+        .services {
+            background: #f8f5f2;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 5px;
+        }
+
+        .testimonials {
+            background: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            padding: 2rem;
+            background: #f8f5f2;
+            border-radius: 5px;
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        input, textarea {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .about-grid,
+            .skills-grid,
+            .portfolio-grid,
+            .services-grid,
+            .testimonial-grid,
+            .brands-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul id="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Dearisa Firmanartha</h1>
+            <p>Fashion Designer & Creative Director</p>
+            <p>Creating timeless fashion pieces that blend contemporary elegance with sustainable design</p>
+            <a href="#contact" class="cta-button">Work With Me</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="images/about-me.png" alt="Dearisa Firmanartha portrait" />
+                </div>
+                <div class="about-content">
+                    <h2>About Me</h2>
+                    <p>With over a decade of experience in the fashion industry, I specialize in blending traditional Indonesian textiles with modern, sustainable design. My work bridges the gap between contemporary fashion and Indonesia’s cultural heritage, using batik, ikat, and tenun to create stylish, eco-friendly pieces.</p>
+
+<p>A graduate in fashion design, I founded my label, <strong>"*****"</strong>, in Surabaya, focusing on elevating craftsmanship. I’ve showcased my collections at <strong>Surabaya Fashion Parade</strong> and <strong>Indonesia Fashion Week</strong> in Jakarta, gaining recognition for modernizing Indonesian textiles.</p>
+
+<p>I’ve collaborated with notable brands like <strong>Batik Keris</strong> and <strong>Matahari Department Store</strong>, contributing to their sustainable initiatives. My designs have dressed influencers and celebrities at <strong>Jakarta Fashion Week</strong> and other high-profile events.</p>
+
+<p>Featured in <strong>Elle Indonesia</strong> and <strong>Harper's Bazaar Indonesia</strong>, I’m dedicated to building a brand that celebrates Indonesia's fashion legacy while addressing global sustainability challenges.</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills">
+        <div class="container">
+            <h2>Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Design</h3>
+                    <p>Pattern Making</p>
+                    <p>Draping</p>
+                    <p>Illustration</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Technical</h3>
+                    <p>CAD Design</p>
+                    <p>3D Modeling</p>
+                    <p>Technical Drawing</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Business</h3>
+                    <p>Brand Development</p>
+                    <p>Collection Planning</p>
+                    <p>Production Management</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/400/400" alt="Spring Collection 2025" />
+                    <div class="portfolio-overlay">
+                        <h3>Spring Collection 2025</h3>
+                        <p>Sustainable luxury pieces inspired by nature</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/400/400" alt="Sustainable Series" />
+                    <div class="portfolio-overlay">
+                        <h3>Sustainable Series</h3>
+                        <p>Eco-friendly materials meet contemporary design</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/400/400" alt="Evening Wear Collection" />
+                    <div class="portfolio-overlay">
+                        <h3>Evening Wear Collection</h3>
+                        <p>Elegant designs for special occasions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Custom Design</h3>
+                    <p>Bespoke pieces tailored to your style and preferences</p>
+                    <ul>
+                        <li>Personal consultation</li>
+                        <li>Custom measurements</li>
+                        <li>Multiple fittings</li>
+                        <li>Fabric selection</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Brand Collaboration</h3>
+                    <p>Creative direction and design for fashion brands</p>
+                    <ul>
+                        <li>Collection development</li>
+                        <li>Technical design</li>
+                        <li>Sustainable solutions</li>
+                        <li>Production oversight</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>Client Testimonials</h2>
+            <div class="testimonial-grid">
+    <div class="testimonial-card">
+        <p>"Dearisa's design philosophy, combining sustainable practices with creativity, has inspired many of her students and colleagues. Her ability to balance innovation and tradition is truly exceptional."</p>
+        <p><strong>- Dr. Rina Sari, Lecturer & Fashion Design Advisor</strong></p>
+    </div>
+    <div class="testimonial-card">
+        <p>"Working with Dearisa has been an absolute pleasure; her dedication to creating timeless and sustainable fashion pieces has been a great asset to our collaborative collections."</p>
+        <p><strong>- Andi Pratama, Partner, Batik Keris</strong></p>
+    </div>
+    <div class="testimonial-card">
+        <p>"Our partnership with Dearisa has been incredibly rewarding. Her designs bring a modern twist to traditional textiles, making them more relevant and appealing to the global market."</p>
+        <p><strong>- Diah Pertiwi, Partner, Matahari Department Store</strong></p>
+    </div>
+    <div class="testimonial-card">
+        <p>"As a fellow designer, I admire Dearisa's approach to fashion—her attention to detail and commitment to sustainable materials truly set her apart from others in the industry."</p>
+        <p><strong>- Ario Fajar, Fashion Designer</strong></p>
+    </div>
+    <div class="testimonial-card">
+        <p>"Dearisa created a bespoke gown for my wedding, and the result was absolutely stunning. She took the time to understand my vision and turned it into a beautiful, one-of-a-kind piece."</p>
+        <p><strong>- Jessica Wira, Custom Client</strong></p>
+    </div>
+</div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-grid">
+                <div>
+                    <h3>Contact Information</h3>
+                    <p>Email: contact@dearisa.com</p>
+                    <p>Studio: Surabaya, Indonesia</p>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Pinterest</a>
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea rows="5" placeholder="Message" required></textarea>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Dearisa Firmanartha. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
